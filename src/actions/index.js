@@ -4,7 +4,7 @@ import { AUTH_USER, AUTH_ERROR } from "./types";
 export const signup = (formProps, callback) => async (dispatch) => {
   try {
     const response = await axios.post(
-      "http://localhost:5000/signup",
+      process.env.REACT_APP_API_URL + "/signup",
       formProps,
     );
 
@@ -19,7 +19,7 @@ export const signup = (formProps, callback) => async (dispatch) => {
 export const signin = (formProps, callback) => async (dispatch) => {
   try {
     const response = await axios.post(
-      "http://localhost:5000/signin",
+      process.env.REACT_APP_API_URL + "/signin",
       formProps,
     );
 
